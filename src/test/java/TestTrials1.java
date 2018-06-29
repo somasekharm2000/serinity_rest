@@ -17,12 +17,13 @@ public class TestTrials1 {
     @Test
     public void test_NumberOfCircuitsFor2017Season_ShouldBe20() {
 
-        System.out.println("Testing URL Content : "+ get().getBody().asString());
+        //System.out.println("Testing URL Content : "+ get().getBody().asString());
 
         given().
                 when().
                 get().
                 then().
+                log().all().
                 assertThat().
                 body("MRData.CircuitTable.Circuits.circuitId",hasSize(20));
     }
